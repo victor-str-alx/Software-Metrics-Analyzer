@@ -1,0 +1,15 @@
+ro/paoo/exam/factory/MetricsSourceFactory.class
+ro/paoo/exam/domain/MetricReport.class
+ro/paoo/exam/source/SonarMetricsSource.class
+ro/paoo/exam/domain/SourceData.class
+ro/paoo/exam/strategy/RiskAnalysisStrategy.class
+ro/paoo/exam/observer/ReportObserver.class
+ro/paoo/exam/strategy/SumAnalysisStrategy.class
+ro/paoo/exam/service/MetricsAnalysisService.class
+ro/paoo/exam/strategy/AnalysisStrategy.class
+ro/paoo/exam/service/ReportPublisher.class
+ro/paoo/exam/source/GitMetricsSource.class
+ro/paoo/exam/Main.class
+ro/paoo/exam/source/MetricsSource.class
+ro/paoo/exam/source/JiraMetricsSource.class
+ro/paoo/exam/observer/ConsoleReportObserver.class

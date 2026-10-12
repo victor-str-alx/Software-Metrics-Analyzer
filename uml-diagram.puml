@@ -1,0 +1,66 @@
+@startuml
+skinparam classAttributeIconSize 0
+
+package "source" {
+  interface MetricsSource {
+    +fetchData(): SourceData
+  }
+  class GitMetricsSource
+  class JiraMetricsSource
+  class SonarMetricsSource
+  MetricsSource <|.. GitMetricsSource
+  MetricsSource <|.. JiraMetricsSource
+  MetricsSource <|.. SonarMetricsSource
+}
+
+package "factory" {
+  class MetricsSourceFactory {
+    +create(key: String): MetricsSource
+    +register(key: String, creator): void
+  }
+}
+
+package "strategy" {
+  interface AnalysisStrategy {
+    +analyze(data: List<SourceData>): MetricReport
+  }
+  class SumAnalysisStrategy
+  class RiskAnalysisStrategy
+  AnalysisStrategy <|.. SumAnalysisStrategy
+  AnalysisStrategy <|.. RiskAnalysisStrategy
+}
+
+package "observer" {
+  interface ReportObserver {
+    +onReportGenerated(report: MetricReport): void
+  }
+  class ConsoleReportObserver
+  ReportObserver <|.. ConsoleReportObserver
+}
+
+package "service" {
+  class MetricsAnalysisService {
+    -analysisStrategy: AnalysisStrategy
+    -reportPublisher: ReportPublisher
+    +generateReport(sources: List<MetricsSource>): MetricReport
+  }
+  class ReportPublisher {
+    +subscribe(observer: ReportObserver): void
+    +notifyAllObservers(report: MetricReport): void
+  }
+}
+
+package "domain" {
+  class SourceData
+  class MetricReport
+}
+
+MetricsSourceFactory ..> MetricsSource : creates
+MetricsAnalysisService --> AnalysisStrategy : uses
+MetricsAnalysisService --> ReportPublisher : uses
+MetricsAnalysisService --> MetricsSource : fetches
+MetricsAnalysisService --> SourceData
+MetricsAnalysisService --> MetricReport
+ReportPublisher --> ReportObserver : notifies
+
+@enduml

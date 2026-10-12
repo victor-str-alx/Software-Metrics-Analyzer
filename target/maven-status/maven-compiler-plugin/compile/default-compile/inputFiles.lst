@@ -1,0 +1,15 @@
+/Users/victorstrimbeanu/Documents/Facultate/PAOO/JAVA APP/src/main/java/ro/paoo/exam/Main.java
+/Users/victorstrimbeanu/Documents/Facultate/PAOO/JAVA APP/src/main/java/ro/paoo/exam/domain/MetricReport.java
+/Users/victorstrimbeanu/Documents/Facultate/PAOO/JAVA APP/src/main/java/ro/paoo/exam/domain/SourceData.java
+/Users/victorstrimbeanu/Documents/Facultate/PAOO/JAVA APP/src/main/java/ro/paoo/exam/factory/MetricsSourceFactory.java
+/Users/victorstrimbeanu/Documents/Facultate/PAOO/JAVA APP/src/main/java/ro/paoo/exam/observer/ConsoleReportObserver.java
+/Users/victorstrimbeanu/Documents/Facultate/PAOO/JAVA APP/src/main/java/ro/paoo/exam/observer/ReportObserver.java
+/Users/victorstrimbeanu/Documents/Facultate/PAOO/JAVA APP/src/main/java/ro/paoo/exam/service/MetricsAnalysisService.java
+/Users/victorstrimbeanu/Documents/Facultate/PAOO/JAVA APP/src/main/java/ro/paoo/exam/service/ReportPublisher.java
+/Users/victorstrimbeanu/Documents/Facultate/PAOO/JAVA APP/src/main/java/ro/paoo/exam/source/GitMetricsSource.java
+/Users/victorstrimbeanu/Documents/Facultate/PAOO/JAVA APP/src/main/java/ro/paoo/exam/source/JiraMetricsSource.java
+/Users/victorstrimbeanu/Documents/Facultate/PAOO/JAVA APP/src/main/java/ro/paoo/exam/source/MetricsSource.java
+/Users/victorstrimbeanu/Documents/Facultate/PAOO/JAVA APP/src/main/java/ro/paoo/exam/source/SonarMetricsSource.java
+/Users/victorstrimbeanu/Documents/Facultate/PAOO/JAVA APP/src/main/java/ro/paoo/exam/strategy/AnalysisStrategy.java
+/Users/victorstrimbeanu/Documents/Facultate/PAOO/JAVA APP/src/main/java/ro/paoo/exam/strategy/RiskAnalysisStrategy.java
+/Users/victorstrimbeanu/Documents/Facultate/PAOO/JAVA APP/src/main/java/ro/paoo/exam/strategy/SumAnalysisStrategy.java
