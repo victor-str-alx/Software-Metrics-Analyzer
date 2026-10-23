@@ -2,28 +2,30 @@
 
 ## Overview
 
-Software Metrics Analyzer is a project focused on collecting and aggregating software metrics from sources such as Git, Jira, and SonarQube.
+Software Metrics Analyzer focuses on collecting and aggregating software metrics from development-related sources such as Git, Jira, and SonarQube.
 
-It is part of my software engineering portfolio and demonstrates an interest in collecting, organising, and reporting technical data.
+It sits at the intersection of software engineering and data handling: information from development tools can be brought together to support review and reporting.
 
-## Purpose
+## Why It Matters
 
-Software metrics can help teams understand aspects of code quality and development activity. Metrics should always be interpreted in context; no single metric provides a complete picture of software quality or individual performance.
+Software teams work with information from multiple tools. Organising metrics in one place can make it easier to review development activity and code-quality indicators. Metrics should always be interpreted in context; no single number provides a complete assessment of code quality or team performance.
 
-## Technology and Data Sources
+## Data Sources
 
-The project description identifies the following data sources:
+- **Git** — version-control and repository activity
+- **Jira** — issue and work-tracking information
+- **SonarQube** — code-quality and static-analysis information
 
-- Git
-- Jira
-- SonarQube
+The exact integrations and supported metrics depend on the current implementation.
 
-Please refer to the source code and configuration for the exact integrations, libraries, and versions.
+## Data Analysis Perspective
 
-## How It Works
+The project provides a technical context for thinking about data collection, aggregation, and reporting. Potential questions include how indicators change over time and how different measures should be interpreted together. These are analytical directions, not claims about specific reports unless they are implemented in the code.
 
-The project is designed around collecting and aggregating software metrics. Consult the current implementation for the precise data flow, supported metrics, and report format.
+## Technology
 
-## Setup and Usage
+See the repository's source files and configuration for the exact languages, libraries, integrations, and versions used.
 
-To run the project, review the prerequisites and instructions in the repository's source files and configuration.
+## Further Development
+
+Possible extensions include clearer metric definitions, reproducible sample data, automated tests, and more detailed reporting documentation.
