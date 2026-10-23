@@ -1,63 +1,52 @@
-# Software Metrics Analyzer (PAOO - P1)
+# Software Metrics Analyzer
 
-## Descriere succinta
-Aplicatia implementeaza o arhitectura extensibila pentru analiza automata a metricilor software colectate din surse multiple (Git, Jira, SonarQube). Solutia este modulara si permite adaugarea facila de surse noi, strategii noi de analiza si noi mecanisme de notificare.
+## Overview
 
-## Functionalitati
-- Colectare de metrici din surse multiple printr-o interfata comuna (`MetricsSource`).
-- Instantiere dinamica a surselor printr-un factory extensibil (`MetricsSourceFactory`).
-- Alegerea algoritmului de analiza prin strategie (`AnalysisStrategy`).
-- Generare raport agregat (`MetricReport`) pe baza datelor colectate.
-- Notificare observatori la generarea raportului (`ReportPublisher` + `ReportObserver`).
+A project for collecting and aggregating software metrics from sources such as Git, Jira, and SonarQube.
 
-## Rulare aplicatie
-Cerinte:
-- Java 17+
-- Maven 3.9+
+This repository can demonstrate data collection, aggregation, and reporting. The exact integrations, supported metrics, and execution steps should be described below based on the implementation currently present in the code.
 
-Comenzi:
-```bash
-cd "JAVA APP"
-mvn clean compile
-mvn exec:java -Dexec.mainClass="ro.paoo.exam.Main"
-```
+## Why it matters
 
-Alternativ (fara plugin exec):
-```bash
-cd "JAVA APP"
-mvn clean package
-java -cp target/classes ro.paoo.exam.Main
-```
+Software teams can use consistent metrics to understand aspects of code quality and development activity. Metrics need context: a single score should not be treated as a complete measure of engineering quality or individual performance.
 
-## Design patterns folosite si motivatia
-- **Factory Method / Simple Factory** (`MetricsSourceFactory`)
-  - Izoleaza logica de creare a surselor de metrici.
-  - Face simpla adaugarea unei noi surse fara modificari in client.
-- **Strategy** (`AnalysisStrategy`, `SumAnalysisStrategy`, `RiskAnalysisStrategy`)
-  - Permite schimbarea algoritmului de analiza fara a afecta serviciul principal.
-  - Respecta extensibilitatea ceruta pentru rapoarte diferite.
-- **Observer** (`ReportPublisher`, `ReportObserver`, `ConsoleReportObserver`)
-  - Decupleaza generarea raportului de reactiile la raport (logging, notificari, export etc.).
-  - Permite adaugarea unor observatori noi fara schimbari in fluxul principal.
+## Features
 
-## Principiile SOLID - unde sunt aplicate
-- **S - Single Responsibility Principle**
-  - `MetricsAnalysisService`: orchestration analiza.
-  - `MetricsSourceFactory`: creare obiecte sursa.
-  - `ReportPublisher`: gestionare observatori/notificari.
-- **O - Open/Closed Principle**
-  - Sursa noua: se adauga o clasa care implementeaza `MetricsSource`.
-  - Strategie noua: se adauga o clasa care implementeaza `AnalysisStrategy`.
-  - Observator nou: se adauga o clasa care implementeaza `ReportObserver`.
-- **L - Liskov Substitution Principle**
-  - `GitMetricsSource`, `JiraMetricsSource`, `SonarMetricsSource` pot fi folosite interschimbabil ca `MetricsSource`.
-  - `RiskAnalysisStrategy` si `SumAnalysisStrategy` pot substitui `AnalysisStrategy`.
-- **I - Interface Segregation Principle**
-  - Interfete mici, specializate: `MetricsSource`, `AnalysisStrategy`, `ReportObserver`.
-  - Clientii depind doar de metodele necesare.
-- **D - Dependency Inversion Principle**
-  - `MetricsAnalysisService` depinde de abstractii (`AnalysisStrategy`, `MetricsSource`) si nu de implementari concrete.
-  - Dependintele sunt injectate prin constructor.
+Document only features that are implemented and tested:
 
+- [ ] Git data collection
+- [ ] Jira data collection
+- [ ] SonarQube data collection
+- [ ] Metric aggregation
+- [ ] Report generation
+- [ ] Error handling and tests
 
-# Software-Metrics-Analyzer
+Remove unchecked items that are not planned, or label them clearly as future work.
+
+## Technology stack
+
+Add the languages, libraries, services, and versions verified from the repository.
+
+## Architecture and data flow
+
+Describe how each source is accessed, how data is transformed, and where results are stored or displayed. Add a diagram if it clarifies the flow.
+
+## Setup and usage
+
+Provide verified prerequisites, configuration instructions, safe example environment variables, and exact run commands. Never commit API tokens, credentials, or private URLs.
+
+## Example output
+
+Add a small anonymised or synthetic example report and explain each metric. State clearly if the example is illustrative rather than produced from a live integration.
+
+## Data and metric definitions
+
+For each metric, document its definition, source, update frequency, and known limitations. Explain missing data and differences between sources.
+
+## Testing
+
+List the tests that exist and provide the commands to run them. Do not claim coverage or successful test results unless verified.
+
+## Limitations and future improvements
+
+Separate known limitations from planned features. Potential improvements might include input validation, automated tests, clearer reporting, and reproducible sample data.
